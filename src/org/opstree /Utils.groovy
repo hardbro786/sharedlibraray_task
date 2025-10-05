@@ -1,18 +1,13 @@
-package org.opstree
+package org.example
 
-class Utils implements Serializable {
-    def script
+class Utils {
+    def steps
 
-    Utils(script) {
-        this.script = script
+    Utils(steps) {
+        this.steps = steps
     }
-    def runSampleMethod(String name) {
-        script.echo "--- [src/org.opstree/Utils.groovy] ---"
-        script.echo "Utils running structured task for: ${name}"
 
-        script.stage('Class-Based Logic') {
-            script.echo "This stage was triggered from the shared library class."
-        }
+    def sayHelloJenkins() {
+        steps.echo "Hello Jenkins from Utility Class!"
     }
-} 
-  
+}
